@@ -1,0 +1,171 @@
+@page "/health_indicators"
+@using PatientDashboard
+@using Models.PatientDashboard
+@inject IPatientDashboardService PatientDashboardService
+
+<div class="row-layout health-indicators-container">
+    <div class="row-layout group">
+        <div class="column-layout group_1">
+            <p class="typography__subtitle-2 text">
+                HEALTH INDICATORS
+            </p>
+            <div class="row-layout group_2">
+                <div class="column-layout group_3">
+                    <div class="column-layout group_4">
+                        <div class="row-layout group_5">
+                            <img src="assets/Scale_Color.svg" class="image" />
+                            <div class="row-layout group_6">
+                                <p class="typography__subtitle-2 text_1">
+                                    WEIGHT
+                                </p>
+                                <h6 class="h6">
+                                    112
+                                </h6>
+                                <p class="typography__subtitle-2 text_2">
+                                    lbs
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column-layout group_7">
+                            <IgbCategoryChart DataSource="@_patientDashboardWeight" ChartType="CategoryChartType.Column" YAxisInterval="10" YAxisMinimumValue="95" YAxisMaximumValue="125" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart" health_indicators-scope></IgbCategoryChart>
+                        </div>
+                    </div>
+                    <div class="column-layout group_4">
+                        <div class="row-layout group_5">
+                            <img src="assets/HRate_Color.svg" class="image" />
+                            <div class="row-layout group_6">
+                                <p class="typography__subtitle-2 text_1">
+                                    HEART RATE
+                                </p>
+                                <h6 class="h6">
+                                    90
+                                </h6>
+                                <p class="typography__subtitle-2 text_2">
+                                    bpm
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column-layout group_7">
+                            <IgbCategoryChart DataSource="@_patientDashboardHeartRate" ChartType="CategoryChartType.Line" YAxisInterval="10" YAxisMinimumValue="60" YAxisMaximumValue="90" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart_1" health_indicators-scope></IgbCategoryChart>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-layout group_3">
+                    <div class="column-layout group_8">
+                        <div class="row-layout group_5">
+                            <img src="assets/BPressure_Color.svg" class="image" />
+                            <div class="row-layout group_6">
+                                <p class="typography__subtitle-2 text_1">
+                                    BLOOD PRESSURE
+                                </p>
+                                <h6 class="h6">
+                                    140
+                                </h6>
+                                <h6 class="h6_1">
+                                    /
+                                </h6>
+                                <h6 class="h6">
+                                    70
+                                </h6>
+                                <p class="typography__subtitle-2 text_2">
+                                    mmHg
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column-layout group_7">
+                            <IgbCategoryChart DataSource="@_patientDashboardBPSystolicDiastolic" ChartType="CategoryChartType.Line" YAxisInterval="20" YAxisMinimumValue="70" YAxisMaximumValue="160" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart_2" health_indicators-scope></IgbCategoryChart>
+                        </div>
+                    </div>
+                    <div class="column-layout group_8">
+                        <div class="row-layout group_5">
+                            <img src="assets/blood-sugar.svg" class="image" />
+                            <div class="row-layout group_6">
+                                <p class="typography__subtitle-2 text_1">
+                                    BLOOD SUGAR
+                                </p>
+                                <h6 class="h6">
+                                    85
+                                </h6>
+                                <p class="typography__subtitle-2 text_2">
+                                    mg/dL
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column-layout group_7">
+                            <IgbCategoryChart DataSource="@_patientDashboardGlucose" ChartType="CategoryChartType.Area" YAxisInterval="5" YAxisMinimumValue="80" YAxisMaximumValue="100" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart_1" health_indicators-scope></IgbCategoryChart>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-layout group_3">
+                    <div class="column-layout group_8">
+                        <div class="row-layout group_5">
+                            <img src="assets/Cholesterol_Color.svg" class="image" />
+                            <div class="row-layout group_6">
+                                <p class="typography__subtitle-2 text_1">
+                                    TOTAL CHOLESTEROL
+                                </p>
+                                <h6 class="h6">
+                                    200
+                                </h6>
+                                <p class="typography__subtitle-2 text_2">
+                                    mg/dL
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column-layout group_7">
+                            <IgbCategoryChart DataSource="@_patientDashboardTotalCholesterol" ChartType="CategoryChartType.Area" YAxisInterval="20" YAxisMinimumValue="160" YAxisMaximumValue="230" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart_3" health_indicators-scope></IgbCategoryChart>
+                        </div>
+                    </div>
+                    <div class="column-layout group_8">
+                        <div class="row-layout group_5">
+                            <img src="assets/Cholesterol_Color.svg" class="image" />
+                            <div class="row-layout group_6">
+                                <p class="typography__subtitle-2 text_1">
+                                    CHOLESTEROL HDL / LDL
+                                </p>
+                                <h6 class="h6">
+                                    80
+                                </h6>
+                                <p class="typography__subtitle-2 text_2">
+                                    mg/dL
+                                </p>
+                                <h6 class="h6_1">
+                                    -
+                                </h6>
+                                <h6 class="h6">
+                                    85
+                                </h6>
+                                <p class="typography__subtitle-2 text_2">
+                                    mg/dL
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column-layout group_7">
+                            <IgbCategoryChart DataSource="@_patientDashboardCholesterolHDLLDL" ChartType="CategoryChartType.Spline" YAxisInterval="20" YAxisMinimumValue="50" YAxisMaximumValue="150" ComputedPlotAreaMarginMode="ComputedPlotAreaMarginMode.Series" class="category-chart_4" health_indicators-scope></IgbCategoryChart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<WeightType> _patientDashboardWeight = new();
+    private List<HeartRateType> _patientDashboardHeartRate = new();
+    private List<BPSystolicDiastolicType> _patientDashboardBPSystolicDiastolic = new();
+    private List<GlucoseType> _patientDashboardGlucose = new();
+    private List<TotalCholesterolType> _patientDashboardTotalCholesterol = new();
+    private List<CholesterolHDLLDLType> _patientDashboardCholesterolHDLLDL = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _patientDashboardWeight = await PatientDashboardService.GetWeightList();
+        _patientDashboardHeartRate = await PatientDashboardService.GetHeartRateList();
+        _patientDashboardBPSystolicDiastolic = await PatientDashboardService.GetBPSystolicDiastolicList();
+        _patientDashboardGlucose = await PatientDashboardService.GetGlucoseList();
+        _patientDashboardTotalCholesterol = await PatientDashboardService.GetTotalCholesterolList();
+        _patientDashboardCholesterolHDLLDL = await PatientDashboardService.GetCholesterolHDLLDLList();
+        await base.OnInitializedAsync();
+    }
+}

@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IgniteUI.Blazor.Trial" Version="23.2.204" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Shared/MainLayout.razor.css" CssScope="master_view-scope" />
+    <None Update="Pages/Home.razor.css" CssScope="home-scope" />
+    <None Update="Pages/Medications.razor.css" CssScope="medications-scope" />
+    <None Update="Pages/Health_Indicators.razor.css" CssScope="health_indicators-scope" />
+    <None Update="Pages/Appointments.razor.css" CssScope="appointments-scope" />
+    <None Update="Pages/Profile.razor.css" CssScope="profile-scope" />
+    <None Update="Pages/Emergency.razor.css" CssScope="emergency-scope" />
+  </ItemGroup>
+
+</Project>
